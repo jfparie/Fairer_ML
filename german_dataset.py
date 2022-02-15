@@ -28,8 +28,8 @@ class GermanDataset(StandardDataset):
     """
 
     def __init__(self, label_name='credit', favorable_classes=[0],
-                 protected_attribute_names=['sex', 'age'],
-                 privileged_classes=[['male'], lambda x: x > 25],
+                 protected_attribute_names=[],
+                 privileged_classes=[],
                  instance_weights_name=None,
                  categorical_features=['status', 'credit_history', 'purpose',
                      'savings', 'employment', 'other_debtors', 'property',
