@@ -14,11 +14,10 @@ default_mappings = {
 def default_preprocessing(df):
     """Adds a derived sex attribute based on personal_status."""
     # TODO: ignores the value of privileged_classes for 'sex'
-    # # male: 1, female: 0
     status_map = {'A91': 'male', 'A93': 'male', 'A94': 'male',
                     'A92': 'female', 'A95': 'female'}
     df['sex'] = df['personal_status'].replace(status_map)
-    
+
     return df
 
 class GermanDataset(StandardDataset):
