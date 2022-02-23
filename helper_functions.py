@@ -144,11 +144,16 @@ def plot(x, x_name, y_left, y_left_name, y_left_lim, **kwargs):
 
 def plot_acc_fair(x, x_name, y_left, y_left_name, y_right, y_right_name, y_left_lim, y_right_lim, **kwargs):
     new_thres = kwargs.get('thres', None)
+    color = kwargs.get('color', None)
+    if color == 'color_dark':
+        color = '#0043CE'
+    else:
+        color = '#777777'
     
     fig, ax1 = plt.subplots(figsize=(10,7))
-    ax1.plot(x, y_left, color=color_dark)
+    ax1.plot(x, y_left, color=color)
     ax1.set_xlabel(x_name, fontsize=16, fontweight='bold')
-    ax1.set_ylabel(y_left_name, color=color_dark, fontsize=16, fontweight='bold')
+    ax1.set_ylabel(y_left_name, color=color, fontsize=16, fontweight='bold')
     ax1.xaxis.set_tick_params(labelsize=14)
     ax1.yaxis.set_tick_params(labelsize=14)
     ax1.set_ylim(y_left_lim[0], y_left_lim[1])
@@ -170,4 +175,4 @@ def plot_acc_fair(x, x_name, y_left, y_left_name, y_right, y_right_name, y_left_
     ax2.yaxis.set_tick_params(labelsize=14)
     ax2.grid(True)
     
-    ax1.legend(['Strategy 1',''])
+    ax1.legend(['Strategy 2',''])
